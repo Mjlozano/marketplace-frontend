@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import ProductCard from './components/productCard/productCard';
+import PrimarySearchAppBar from './components/appBar/appbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PrimarySearchAppBar />
+      <Routes>
+        <Route path="/" element={<ProductCard/>} />
+        <Route path="login" element={<h1>Login</h1>} />
+        <Route path="product/:id" element={<h1>vista de producto</h1>} />
+        <Route path="dashboard" element={<h1>Dashboard</h1>} />
+      </Routes>
     </div>
   );
 }
