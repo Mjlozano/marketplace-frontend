@@ -67,13 +67,13 @@ const NewUser = () => {
 
 
     function checkChange(name, value) {
-        if (name == "client") {
+        if (name === "client") {
             setCargo("client");
         }
-        if (name == "provider") {
+        if (name === "provider") {
             setCargo("provider");
         }
-        if (name == "admin") {
+        if (name === "admin") {
             setCargo("admin");
         }
     }
