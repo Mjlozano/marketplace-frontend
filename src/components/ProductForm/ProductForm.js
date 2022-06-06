@@ -6,7 +6,7 @@ import products from "../../helpers/products";
 
 const ProcutForm = () => {
 
-    var id=0;
+    var id = 0;
     var categorias = [];
     fetch("https://api.mercadolibre.com/sites/MLA/categories").then((res) => res.json()).then((data) => {
         data.forEach(element => {
@@ -21,8 +21,8 @@ const ProcutForm = () => {
         if (!categorias.includes(element.category)) {
             categorias.push(element.category);
         }
-        if(element.id>id){
-            id=element.id;
+        if (element.id > id) {
+            id = element.id;
         }
     });
 
@@ -33,16 +33,21 @@ const ProcutForm = () => {
     const [category, setcategory] = useState("");
 
     function handleChange() {
-        id=id+1;
-        products.push({
-            name: name,
-            price: price,
-            category: category,
-            image: link,
-            id: id,
-            description: description
-        })
-        console.log(products);
+        id = id + 1;
+        if (!localStorage.getItem("sotck")) {
+            localStorage.setItem("sotck", JSON.stringify([]));
+        } else {
+            var stock = JSON.parse(localStorage.getItem("sotck"));
+            stock.push({
+                name: name,
+                price: price,
+                category: category,
+                image: link,
+                id: id,
+                description: description
+            });
+            localStorage.setItem("sotck", JSON.stringify(stock));
+        }
     }
     //console.log(categorias);
 
