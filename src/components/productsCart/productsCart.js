@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 
 const ProductCart = () => {
   return (
-    <Container sx={{ width: "50%" }} className="container">
+    <Container sx={{ width: "50%" }} className="container-cart">
       <h1 className="titulo">SEXOOOOOOOOOOOOOOOOOOO</h1>
       <div className="product-box">
         <Box
