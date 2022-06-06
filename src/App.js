@@ -1,9 +1,11 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import MainPage from './views/mainPage/mainPage';
+import MainPageAdmin from './views/mainPage/mainPageAdmin';
 import PrimarySearchAppBar from './components/appBar/appbar';
 import LoginView from './views/login/loginView';
 import NewUser from './components/loginForm/LoginNewUser';
+import ProcutForm from './components/ProductForm/ProductForm'
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
     <div className="App">
       <PrimarySearchAppBar />
       <Routes>
-        <Route path="/" element={<MainPage/>} />
+        <Route path="/" element={<MainPage titulo="¡Bienvenido!"/>} />
+        <Route path="/admin" element={<MainPageAdmin/>} />
+        <Route path="/new-product" element={<ProcutForm/>} />
         <Route path="login" element={<LoginView/>} />
         <Route path="new-user" element={<NewUser/>} />
         <Route path="product/:id" element={<h1>vista de producto</h1>} />

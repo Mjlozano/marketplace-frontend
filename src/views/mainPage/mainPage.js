@@ -5,7 +5,7 @@ import ProductList from '../../components/productList/productList';
 import products from '../../helpers/products';
 
 
-const MainPage = () => {
+const MainPage = ({titulo}) => {
     const productsByCategory = products.reduce((acc, product) => {
         if (!acc[product.category]) {
             acc[product.category] = [];
@@ -15,10 +15,12 @@ const MainPage = () => {
     }
     , {});
 
+
+
   return (
       <Grid container spacing={3}>
         <Grid item xs={12}>
-            <h1>Bienvenido!</h1>
+            <h1>{titulo}</h1>
         </Grid>
         {
             Object.keys(productsByCategory).map(category => (

@@ -95,6 +95,13 @@ const products = [
         image: 'https://media.4rgos.it/i/Argos/9520103_R_Z001A?w=750&h=440&qlt=70',
         id: 12,
         description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
+    },{
+        name: 'Yellow Iguana',
+        price: 1000,
+        category: 'Classic',
+        image: 'https://http2.mlstatic.com/D_NQ_NP_654350-MLA46165124813_052021-V.webp',
+        id: 12,
+        description: 'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'
     },];
 
     export default products;

@@ -34,37 +34,41 @@ const LoginForm = () => {
                 password: "123456",
                 cargo: "admin",
                 email: "ravelandia@uninorte.edu.co"
-            },{
-                nombre:"Issa",
-                Apellido:"Dovale",
-                user:"issad",
-                password:"123456",
-                cargo:"provider",
-                email:"idovale@uninorte.edu.co"
-            },{
-                nombre:"Jesus",
-                Apellido:"Lozano",
-                user:"jesusl",
-                password:"123456",
-                cargo:"provider",
-                email:"jlozano@uninorte.edu.co"
-            },{
-                nombre:"Juan",
-                Apellido:"Perez",
-                user:"juanp",
-                password:"123456",
-                cargo:"provider",
-                email:"jperez@uninorte.edu.co"
+            }, {
+                nombre: "Issa",
+                Apellido: "Dovale",
+                user: "issad",
+                password: "123456",
+                cargo: "provider",
+                email: "idovale@uninorte.edu.co"
+            }, {
+                nombre: "Jesus",
+                Apellido: "Lozano",
+                user: "jesusl",
+                password: "123456",
+                cargo: "provider",
+                email: "jlozano@uninorte.edu.co"
+            }, {
+                nombre: "Juan",
+                Apellido: "Perez",
+                user: "juanp",
+                password: "123456",
+                cargo: "provider",
+                email: "jperez@uninorte.edu.co"
             }
             ]));
             handleSubmit();
-        }else{
+        } else {
             //Si el localStorage Usuarios existe, lo lee
+
             const usuarios = JSON.parse(localStorage.getItem("Usuarios"));
             //Si el usuario y contraseña son correctos, lo redirige a la vista de productos
-            if(usuarios.filter(usuario => usuario.user === user && usuario.password === password).length > 0){
+            if (usuarios.filter(usuario => usuario.user === user && usuario.password === password && (usuario.cargo == "admin"
+                || usuario.cargo == "provider")).length > 0) {
+                window.location.href = "/admin";
+            } else if (usuarios.filter(usuario => usuario.user === user && usuario.password === password).length > 0) {
                 window.location.href = "/";
-            }else{
+            } else {
                 //Si el usuario y contraseña son incorrectos, muestra un mensaje de error
                 alert("Usuario o contraseña incorrectos");
             }
@@ -73,10 +77,10 @@ const LoginForm = () => {
 
     return (
         <div className="Login-container">
-            
+
             <label className="label-text">Usuario</label>
             <Input
-                
+
                 attribute={{
                     id: "user",
                     type: "text",
@@ -88,7 +92,7 @@ const LoginForm = () => {
             />
             <label className="label-text">Contraseña</label>
             <Input
-                
+
                 attribute={{
                     id: "password",
                     type: "password",
