@@ -6,6 +6,11 @@ import products from '../../helpers/products';
 
 
 const MainPage = ({titulo}) => {
+    
+    if(!localStorage.getItem('Carrito')){
+        localStorage.setItem('Carrito', JSON.stringify([]));
+    }
+
     const productsByCategory = products.reduce((acc, product) => {
         if (!acc[product.category]) {
             acc[product.category] = [];

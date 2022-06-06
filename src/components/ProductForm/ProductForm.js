@@ -33,6 +33,7 @@ const ProcutForm = () => {
     const [category, setcategory] = useState("");
 
     function handleChange() {
+        id=id+1;
         products.push({
             name: name,
             price: price,

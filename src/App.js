@@ -6,6 +6,7 @@ import PrimarySearchAppBar from './components/appBar/appbar';
 import LoginView from './views/login/loginView';
 import NewUser from './components/loginForm/LoginNewUser';
 import ProcutForm from './components/ProductForm/ProductForm'
+import Cart from './views/cart/cartPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/new-product" element={<ProcutForm/>} />
         <Route path="login" element={<LoginView/>} />
         <Route path="new-user" element={<NewUser/>} />
+        <Route path="cart" element={<Cart/>} />
         <Route path="product/:id" element={<h1>vista de producto</h1>} />
         <Route path="dashboard" element={<h1>Dashboard</h1>} />
       </Routes>
