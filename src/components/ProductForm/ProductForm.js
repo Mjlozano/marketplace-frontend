@@ -54,7 +54,7 @@ const ProcutForm = () => {
     return (
         <div>
             <h1>Product Form</h1>
-            <Container sx={{ width: '50%' }} className="container">
+            <Container sx={{ width: '50%' }} className="container-form">
                 <div className="container-div">
                     <TextField sx={{
                         display: 'inline-flex',
