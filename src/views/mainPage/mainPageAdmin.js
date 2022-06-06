@@ -13,7 +13,7 @@ const MainPageAdmin = () => {
     return (
         <>
             <div>
-                <p>¿Tienes un nuevo producto?, ¡Agregalo aca!</p>
+                <p>¿Tienes un nuevo producto?, ¡Agregalo acá!</p>
                 <Button variant="contained" onClick={subimit}>Nuevo prodcuto</Button>
             </div>
             <MainPage titulo="¡Bienvenido Admin!" />
