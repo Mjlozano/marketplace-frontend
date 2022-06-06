@@ -37,8 +37,8 @@ const Cart = () => {
         <Button
           onClick={cambiodePagina}
           sx={{height: 60,
-              width: 200,ml: 2, mt: 1}}
-        variant="outlined">Continuar compra</Button>
+              width: 200, ml: 2, mb: 3}}
+        variant="contained">Continuar compra</Button>
       </div>
     </div>
   );

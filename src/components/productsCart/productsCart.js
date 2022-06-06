@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 const ProductCart = ({titulo,imagen,precio,cantidad}) => {
   return (
     <Container sx={{ width: "50%" }} className="container-cart">
-      <h1 className="titulo">SEXOOOOOOOOOOOOOOOOOOO</h1>
+      <h1 className="titulo">{titulo}</h1>
       <div className="product-box">
         <Box
           className="image"
@@ -22,7 +22,7 @@ const ProductCart = ({titulo,imagen,precio,cantidad}) => {
         <div className="image-info">
           <h1 className="precio">$ {precio}</h1>
           <p className="cantidad">Cantidad: {cantidad}</p>
-          <p className="cantidad">total por producto:${precio * cantidad}</p> 
+          <p className="total">Total por producto: ${precio * cantidad}</p> 
         </div>
       </div>
     </Container>
