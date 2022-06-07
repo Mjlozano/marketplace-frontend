@@ -34,10 +34,10 @@ const ProcutForm = () => {
 
     function handleChange() {
         id = id + 1;
-        if (!localStorage.getItem("sotck")) {
-            localStorage.setItem("sotck", JSON.stringify([]));
+        if (!localStorage.getItem("stock")) {
+            localStorage.setItem("stock", JSON.stringify([]));
         } else {
-            var stock = JSON.parse(localStorage.getItem("sotck"));
+            var stock = JSON.parse(localStorage.getItem("stock"));
             stock.push({
                 name: name,
                 price: price,
@@ -46,14 +46,14 @@ const ProcutForm = () => {
                 id: id,
                 description: description
             });
-            localStorage.setItem("sotck", JSON.stringify(stock));
+            localStorage.setItem("stock", JSON.stringify(stock));
         }
     }
     //console.log(categorias);
 
     return (
         <div>
-            <h1>Product Form</h1>
+            <h1>Nuevo Producto</h1>
             <Container sx={{ width: '50%' }} className="container-form">
                 <div className="container-div">
                     <TextField sx={{
@@ -88,7 +88,9 @@ const ProcutForm = () => {
                     <br />
                     <TextField
                         fullWidth
-                        id="standard-basic standard-size-normal" label="Link" variant="standard"
+                        id="standard-basic standard-size-normal" 
+                        label="Link" 
+                        variant="standard"
                         placeholder="Ingresa el link de la imagen del producto"
                         //value={link}
                         onChange={(e) => setlink(e.target.value)}
@@ -108,9 +110,9 @@ const ProcutForm = () => {
                     <Autocomplete
                         disablePortal
                         id="combo-box-demo"
+                        variant="standard"
                         options={categorias}
-
-                        onChange={(event, value) => console.log(value)}
+                        onChange={(e, value) => setcategory(value)}
                         sx={{ width: '100%', mt: '10px' }}
                         renderInput={(params) => <TextField {...params} label="Categoria" />}
                     />

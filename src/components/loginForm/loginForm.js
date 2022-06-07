@@ -10,6 +10,7 @@ const LoginForm = () => {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
+    const [currentUser, setCurrentUser] = useState(null);
 
     function handleChange(name, value) {
         if (name === "user") {
@@ -63,10 +64,12 @@ const LoginForm = () => {
 
             const usuarios = JSON.parse(localStorage.getItem("Usuarios"));
             //Si el usuario y contraseña son correctos, lo redirige a la vista de productos
-            if (usuarios.filter(usuario => usuario.user === user && usuario.password === password && (usuario.cargo == "admin"
-                || usuario.cargo == "provider")).length > 0) {
+            if (usuarios.filter(usuario => usuario.user === user && usuario.password === password && (usuario.cargo === "admin"
+                || usuario.cargo === "provider")).length > 0) {
+                    localStorage.setItem("user", user);
                 window.location.href = "/admin";
             } else if (usuarios.filter(usuario => usuario.user === user && usuario.password === password).length > 0) {
+                localStorage.setItem("user", user);
                 window.location.href = "/";
             } else {
                 //Si el usuario y contraseña son incorrectos, muestra un mensaje de error

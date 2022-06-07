@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect } from 'react'
 import { Grid } from '@mui/material';
 import ProductList from '../../components/productList/productList';
 
@@ -6,12 +6,23 @@ import products from '../../helpers/products';
 
 
 const MainPage = ({titulo}) => {
+    const [stock, setStock] = useState([]);
+
+    if (!localStorage.getItem("stock")) {
+        localStorage.setItem("stock", JSON.stringify(products));
+    }
+
+    useEffect(() => {
+    setStock(JSON.parse(localStorage.getItem("stock")));
+    }, []);
+    
+
     
     if(!localStorage.getItem('Carrito')){
         localStorage.setItem('Carrito', JSON.stringify([]));
     }
 
-    const productsByCategory = products.reduce((acc, product) => {
+    const productsByCategory = stock.reduce((acc, product) => {
         if (!acc[product.category]) {
             acc[product.category] = [];
         }

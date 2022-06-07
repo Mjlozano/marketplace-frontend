@@ -1,8 +1,6 @@
 
-import { ConnectingAirportsOutlined } from "@mui/icons-material";
-import { Card, CardContent, CardActionArea, CardMedia, Typography, } from "@mui/material";
-import { Button } from "@mui/material";
-import { type } from "@testing-library/user-event/dist/type";
+import { Card, CardContent, CardActionArea, CardMedia, Typography, CardActions} from "@mui/material";
+import Button from "@mui/material/Button";
 
 const ProductCard = ({ product }) => {
 
@@ -10,7 +8,6 @@ const ProductCard = ({ product }) => {
 
   function subimit() {
     var products = JSON.parse(localStorage.getItem('Carrito'));
-    console.log(typeof products);
     if (products.length === 0) {
       products.push({
         name: name,
@@ -48,7 +45,7 @@ const ProductCard = ({ product }) => {
 
 
   return (
-    <Card key={id} sx={{ maxWidth: 340, minWidth: 270 }}>
+    <><Card key={id} sx={{ maxWidth: 340, minWidth: 270 }}>
       <CardActionArea
         onClick={subimit}
       >
@@ -70,7 +67,12 @@ const ProductCard = ({ product }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
+      <CardActions style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}}>
+      <Button size="small" oncClick={subimit()}>Comprar</Button>
+    </CardActions>
     </Card>
+    </>
+    
   );
 }
 

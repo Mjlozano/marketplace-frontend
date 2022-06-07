@@ -11,6 +11,11 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%', 
     overflow: 'auto',
   },
+
+  listItem: {
+    margin: 100,
+
+  },
 }));
 
 const ProductList = ({products}) => {
@@ -20,7 +25,7 @@ const ProductList = ({products}) => {
     <Grid item xs={12}>
       <List className={classes.root}>
         {products.map((product) => (
-          <ListItem>
+          <ListItem className="listItem">
             <ProductCard key={product.id} product={product} />
           </ListItem>
         ))}

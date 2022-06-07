@@ -12,10 +12,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -75,6 +75,9 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    if(localStorage.getItem('user')){
+      localStorage.removeItem('user');
+    }
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -99,7 +102,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Mi cuenta</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Cerrar Sesión</MenuItem>
+      <MenuItem onClick={handleMenuClose} component={Link} to='/login'>{!localStorage.getItem("user") ? 'Iniciar Sesión': 'Cerrar Sesión'}</MenuItem>
     </Menu>
   );
 
@@ -120,13 +123,13 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      <MenuItem component={Link} to='/cart'>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={0} color="error">
-            <MailIcon />
+            <ShoppingCartIcon />
           </Badge>
         </IconButton>
-        <p>Mensajes</p>
+        <p>Carrito</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -174,7 +177,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MARKETPLACE
+            <Link to="/"  style={{ textDecoration: 'none' }}>Marketplace</Link>  
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -187,9 +190,9 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <IconButton size="large" aria-label="show 4 new mails" color="inherit" component={Link} to='/cart'>
               <Badge badgeContent={0} color="error">
-                <MailIcon />
+                <ShoppingCartIcon />
               </Badge>
             </IconButton>
             <IconButton
