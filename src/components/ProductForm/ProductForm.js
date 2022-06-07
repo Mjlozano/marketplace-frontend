@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, Input, Autocomplete } from "@mui/material";
+import { Container, TextField, FormControl, InputLabel, InputAdornment, Input, Autocomplete } from "@mui/material";
 import { Button } from "@mui/material";
 import "./Prodcutstyle.css"
 import products from "../../helpers/products";

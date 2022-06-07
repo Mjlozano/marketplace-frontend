@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import LoginForm from "../../components/loginForm/loginForm";
 import "./styles/LoginView.css";

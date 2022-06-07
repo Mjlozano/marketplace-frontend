@@ -3,8 +3,6 @@ import React from "react";
 import { Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
-import MainPage from "./mainPage";
-
 const MainPageAdmin = () => {
   const data = JSON.parse(localStorage.getItem("stock"));
   console.log(data);
@@ -39,7 +37,7 @@ const MainPageAdmin = () => {
     var index=[];
     datos.forEach(element => {
       idselection.forEach(element2 => {
-        if(element.id==element2){
+        if(element.id===element2){
           index.push(datos.indexOf(element));
         }
       })
@@ -47,7 +45,7 @@ const MainPageAdmin = () => {
     console.log(index);
     var ver=true;
     index.forEach(element => {
-      if (ver ==true) {
+      if (ver === true) {
         datos.splice(element, 1);
         ver = false;
       }else{

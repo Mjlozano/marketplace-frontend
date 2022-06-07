@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, Component } from "react";
+import { useState } from "react";
 
 
 
@@ -11,10 +11,8 @@ import Checkbox from "./components/CheckBox";
 const NewUser = () => {
 
     const [error, setError] = useState(false);
+     // eslint-disable-next-line
     const [errorTipo, setErrorTipo] = useState(false);
-    const [client, setClient] = useState(false);
-    const [provider, setProvider] = useState(false);
-    const [admin, setAdmin] = useState(false);
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");

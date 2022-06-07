@@ -177,7 +177,7 @@ export default function PrimarySearchAppBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            <Link to={ localStorage.getItem("user_cargo")!= "client" ? '/admin' : '/' }  style={{ textDecoration: 'none' }}>Marketplace</Link> 
+            <Link to={ localStorage.getItem("user_cargo") !== "client" ? '/admin' : '/' }  style={{ textDecoration: 'none' }}>Marketplace</Link> 
           </Typography>
           <Search>
             <SearchIconWrapper>

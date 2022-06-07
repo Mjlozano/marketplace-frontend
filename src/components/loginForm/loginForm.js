@@ -10,7 +10,6 @@ const LoginForm = () => {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
-    const [currentUser, setCurrentUser] = useState(null);
 
     function handleChange(name, value) {
         if (name === "user") {

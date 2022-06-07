@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Container } from "@mui/material";
+import React from "react";
 import { Button } from "@mui/material";
 import ProductCart from "../../components/productsCart/productsCart";
 import "./styles/cartView.css";
@@ -16,7 +15,7 @@ const Cart = () => {
   function cambiodePagina() {
     localStorage.removeItem('Carrito');
     alert("Gracias por su compra");
-    window.location.href = localStorage.getItem("user_cargo")!= "client" ? '/admin' : '/';
+    window.location.href = localStorage.getItem("user_cargo") !== "client" ? '/admin' : '/';
   }
 
   return (

@@ -8,7 +8,7 @@ const ProductCart = ({ titulo, imagen, precio, cantidad }) => {
     carrito.forEach((element) => {
       if (element.name === titulo) {
         element.cantidad = element.cantidad - 1;
-        if (element.cantidad == 0) {
+        if (element.cantidad === 0) {
           carrito.splice(element.index, 1);
         }
         localStorage.setItem("Carrito", JSON.stringify(carrito));
