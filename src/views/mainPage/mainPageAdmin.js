@@ -2,6 +2,7 @@ import React from "react";
 
 import { Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
+import FullFeaturedCrudGrid from "../../components/table/productTable";
 
 import MainPage from "./mainPage";
 
@@ -38,14 +39,15 @@ const MainPageAdmin = () => {
         </Button>
       </div>
       <div style={{ height: 400, width: "100%" }}>
-        <DataGrid
+        {/* <DataGrid
           rows={data}
           columns={columns}
           pageSize={5}
           rowsPerPageOptions={[5]}
           checkboxSelection
           experimentalFeatures={{ newEditingApi: true }}
-        />
+        /> */}
+        <FullFeaturedCrudGrid />
       </div>
     </>
   );
