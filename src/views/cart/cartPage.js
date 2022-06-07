@@ -16,7 +16,7 @@ const Cart = () => {
   function cambiodePagina() {
     localStorage.removeItem('Carrito');
     alert("Gracias por su compra");
-    window.location.href = "/";
+    window.location.href = localStorage.getItem("user_cargo")!= "client" ? '/admin' : '/';
   }
 
   return (

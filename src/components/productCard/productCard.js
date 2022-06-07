@@ -7,7 +7,6 @@ const ProductCard = ({ product }) => {
   const { name, price, image, id, description } = product;
 
   function subimit() {
-    console.log("hola");
     var products = JSON.parse(localStorage.getItem('Carrito'));
     if (products.length === 0) {
       products.push({

@@ -67,9 +67,11 @@ const LoginForm = () => {
             if (usuarios.filter(usuario => usuario.user === user && usuario.password === password && (usuario.cargo === "admin"
                 || usuario.cargo === "provider")).length > 0) {
                     localStorage.setItem("user", user);
+                    localStorage.setItem("user_cargo", "admin")
                 window.location.href = "/admin";
             } else if (usuarios.filter(usuario => usuario.user === user && usuario.password === password).length > 0) {
                 localStorage.setItem("user", user);
+                localStorage.setItem("user_cargo", "client")
                 window.location.href = "/";
             } else {
                 //Si el usuario y contraseña son incorrectos, muestra un mensaje de error
