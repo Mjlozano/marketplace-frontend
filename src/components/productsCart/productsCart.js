@@ -11,8 +11,8 @@ const ProductCart = ({titulo,imagen,precio,cantidad}) => {
           className="image"
           component="img"
           sx={{
-            height: 233,
-            width: 350,
+            height: 250,
+            //width: 350,
             maxHeight: { xs: 233, md: 167 },
             maxWidth: { xs: 350, md: 250 },
           }}
